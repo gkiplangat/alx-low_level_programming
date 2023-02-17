@@ -12,7 +12,7 @@ int main(void)
 int num = 48;
 while (num <= 57)
 {
-putchar(n);
+putchar(num);
 num += 1;
 }
 printf("\n");
