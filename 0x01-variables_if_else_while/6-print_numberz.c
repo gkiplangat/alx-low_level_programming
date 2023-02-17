@@ -6,15 +6,14 @@
  * Return: Always 0 (success)
  */
 
-
 int main(void)
 {
-int num = 48;
-while (num <= 57)
+int n = 48;
+while (n <= 57)
 {
-putchar(num);
-num += 1;
+putchar(n);
+n += 1;
 }
-putchar("\n");
+printf("\n");
 return (0);
 }
