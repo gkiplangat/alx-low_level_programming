@@ -8,13 +8,12 @@
 
 int main(void)
 {
-int n; 
-n = 0;
-while (n <= 10)
-{
-putchar(n + '0');
-n++;
-}
-putchar("\n");
-return (0);
+	int num;
+
+	for (num = 0; num < 10; num++)
+		putchar((num % 10) + '0');
+
+	putchar('\n');
+
+	return (0);
 }
