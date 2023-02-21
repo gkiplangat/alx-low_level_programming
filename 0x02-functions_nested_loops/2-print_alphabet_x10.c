@@ -13,7 +13,7 @@ char ch;
 int i;
 i = 0;
 while (i < 10){
-for (ch = 'a'; ch <= 10; ch++)
+for (ch = 'a'; ch <= 'z'; ch++)
 {
 _putchar(ch);
 }
