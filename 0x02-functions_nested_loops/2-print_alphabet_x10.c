@@ -14,7 +14,9 @@ int i;
 i = 0;
 while (i < 10){
 for (ch = 'a'; ch <= 10; ch++)
+{
 _putchar(ch);
+}
 _putchar('\n');
 i++;
 }
