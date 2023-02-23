@@ -1,5 +1,5 @@
 ## 0x04. C - More functions, more nested loops
-### Author: `Gideon Kiplangat`
+####  Author: `Gideon Kiplangat`
 ### Intructions used to solve the task
 * Step 1: Create main.c file and add it's content
 ```ts
