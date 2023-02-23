@@ -1,5 +1,5 @@
 ## 0x04. C - More functions, more nested loops
-
+### Author: `Gideon Kiplangat`
 ### Intructions used to solve the task
 * Step 1: Create main.c file and add it's content
 ```ts
@@ -29,8 +29,7 @@ git add filename
 git commit -m "your commit message here"
 git push
 ```
-* Step 7:check your code in the alx platform, incase of any errors g
-o back to the error files and solve it.
+* Step 7:check your code in the alx platform, incase of any errors go back to the error files and solve it.
 
 
 
