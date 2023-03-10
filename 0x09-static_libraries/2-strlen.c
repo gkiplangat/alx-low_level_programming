@@ -1,6 +1,5 @@
 #include "main.h"
 
-
-int _isalpha(int c)
+int _strlen(char *s)
 {
 }
