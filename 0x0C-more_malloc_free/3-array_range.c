@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
-
+#include <stddef.h>
 
 /**
 * *array_range - creates an array of integers
