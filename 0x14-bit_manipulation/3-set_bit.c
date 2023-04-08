@@ -3,9 +3,9 @@
 
 /**
  * set_bit - sets the value of a bit to 1 at a given index
- * @n: pointer to the unsigned long int to set bit in
+ * @n: pointer to the unsigned long int to set bit into
  * @index: index of the bit to set.
- * Return: 1 if it worked, or -1 if an error occurred
+ * Return: 1 if it worked else -1
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
