@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /**
- * read_textfile  read a text file and print output in POSIX standard output
+ * read_textfile - read a text file and print output in POSIX standard output
  * @filename: - file to be read
  * @letters: - number of letters it should read and print
  * Return: 1 on success else 0
@@ -26,13 +26,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 	return (0);
 	}
-	
 	if (buffer == NULL)
 	{
 	fclose(file);
 	return (0);
 	}
-	
 	if (bytes_read < 0)
 	{
 	fclose(file);
@@ -40,7 +38,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 	}
 	buffer[bytes_read] = '\0';
-	
 	if (bytes_written < 0 || bytes_written != bytes_read)
 	{
 	fclose(file);
