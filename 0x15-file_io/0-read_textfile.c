@@ -1,7 +1,7 @@
-#include <stdlib.h>
 #include "main.h"
 #include <unistd.h>
-#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
 /**
  * read_textfile - read a text file and print output in POSIX standard output
  * @filename: - file to be read
@@ -9,42 +9,28 @@
  * Return: 1 on success else 0
  */
 
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file = fopen(filename, "r");
-	char *buffer = (char *) malloc(letters + 1);
-	ssize_t bytes_read = fread(buffer, sizeof(char), letters, file);
-	ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+	ssize_t openFile, readFile, writeFile;
+	char *buffer;
 
 	if (filename == NULL)
-	{
 	return (0);
-	}
-
-	if (file == NULL)
-	{
-	return (0);
-	}
+	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-	{
-	fclose(file);
 	return (0);
-	}
-	if (bytes_read < 0)
+
+	openFile = open(filename, O_RDONLY);
+	readFile = read(openFile, buffer, letters);
+	writeFile = write(STDOUT_FILENO, buffer, readFile);
+
+	if (openFile == -1 || readFile == -1 || writeFile == -1 || writeFile != readFile)
 	{
-	fclose(file);
 	free(buffer);
 	return (0);
 	}
-	buffer[bytes_read] = '\0';
-	if (bytes_written < 0 || bytes_written != bytes_read)
-	{
-	fclose(file);
 	free(buffer);
-	return (0);
-	}
-	fclose(file);
-	free(buffer);
-	return (bytes_read);
+	close(openFile);
+	return (writeFile);
 }
+
