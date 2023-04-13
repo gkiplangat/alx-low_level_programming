@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 
 	openf = open(filename, O_RDONLY);
-	readf = read(openFile, buffer, letters);
+	readf = read(openf, buffer, letters);
 	writef = write(STDOUT_FILENO, buffer, readf);
 
 	if (openf == -1 || readf == -1 || writef == -1 || writef != readf)
@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 	}
 	free(buffer);
-	close(openFile);
-	return (writeFile);
+	close(openf);
+	return (writef);
 }
 
