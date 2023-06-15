@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int isPalindrome(int number) {
+    int originalNum = number;
+    int reverseNum = 0;
+    
+    while (number > 0) {
+        reverseNum = (reverseNum * 10) + (number % 10);
+        number /= 10;
+    }
+    
+    return (originalNum == reverseNum);
+}
+
+int main() {
+    int largestPalindrome = 0;
+    int i, j;
+
+    for (i = 999; i >= 100; i--) {
+        for (j = i; j >= 100; j--) {
+            int product = i * j;
+            if (product < largestPalindrome)
+                break;
+            
+            if (isPalindrome(product) && product > largestPalindrome)
+                largestPalindrome = product;
+        }
+    }
+
+    FILE *file = fopen("102-result", "w");
+    if (file != NULL) {
+        fprintf(file, "%d", largestPalindrome);
+        fclose(file);
+        printf("Largest palindrome: %d\n", largestPalindrome);
+    } else {
+        printf("Error creating the file.\n");
+    }
+
+    return 0;
+}
+
