@@ -8,39 +8,39 @@ int isPalindrome(int num);
  * main - prints the largest palindrome made from the product of
  *		  two 3-digit numbers and saves it to a file.
  *
- * Return: Largest number.
+ * Return: Largest palindrome number.
  */
 
 int main(void)
 {
-	int largestPalindrome = 0;
-	int i, j;
-	FILE *fptr;
-	char *filename = "./102-result";
+	int largest3d_Palindrome = 0;
+	int x, y;
+	FILE *f_pointer;
+	char *fname = "./102-result";
 
-	for (i = 999; i >= 100; i--)
-		for (j = 999; j >= 100; j--)
+	for (x = 999; x >= 100; x--)
+		for (y = 999; y >= 100; y--)
 		{
-			int product = i * j;
+			int product = x * y;
 
-			if (product > largestPalindrome && isPalindrome(product))
-				largestPalindrome = product;
+			if (product > largest3d_Palindrome && isPalindrome(product))
+				largest3d_Palindrome = product;
 		}
 
 	printf("The largest palindrome made from the product");
-	printf(" of two 3-digit numbers is: %d\n", largestPalindrome);
+	printf(" of two 3-digit numbers is: %d\n", largest3d_Palindrome);
 
-	fptr = fopen(filename, "w");
-	if (!fptr)
+	fptr = fopen(fname, "w");
+	if (!f_pointer)
 	{
 		perror("Error!");
 		exit(EXIT_FAILURE);
 	}
 
-	fprintf(fptr, "%d", largestPalindrome);
-	fclose(fptr);
+	fprintf(f_pointer, "%d", largest3d_Palindrome);
+	fclose(f_pointer);
 
-	printf("It's been saved to the file %s in current directory.\n", filename);
+	printf("It's been saved to the file %s in current directory.\n", fname);
 
 	return (0);
 }
@@ -54,14 +54,14 @@ int main(void)
 
 int isPalindrome(int num)
 {
-	int reversedNum = 0;
+	int reversedNumber = 0;
 	int temp = num;
 
 	while (temp != 0)
 	{
-		reversedNum = reversedNum * 10 + temp % 10;
+		reversedNumber = reversedNumber * 10 + temp % 10;
 		temp /= 10;
 	}
 
-	return (num == reversedNum);
+	return (num == reversedNumber);
 }
