@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 
-void insert_node_at_the begining(hash_node_t **head, hash_node_t *node);
+void insert_node_at_the_begining(hash_node_t **head, hash_node_t *node);
 
 /**
  * hash_table_set - Adds an element to the hash table.
@@ -68,19 +68,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
     /* If code gets here then there is a collision. Add new node at start. */
     if (*ht_bucket && strcmp((*ht_bucket)->key, key) != 0)
-        insert_node_at_the begining(&(*ht_bucket), hash_table_p);
+        insert_node_at_the_begining(&(*ht_bucket), hash_table_p);
 
     return (1);
 }
 
 /**
- * insert_node_at_the begining - Adds a new node at the start of the linked list.
+ * insert_node_at_the_begining - Adds a new node at the start of the linked list.
  * @head: The first node of the singly-linked list.
  * @node: The new node to add (represents the key-value pair).
  *
  * Return: Nothing.
  */
-void insert_node_at_the begining(hash_node_t **head, hash_node_t *node)
+void insert_node_at_the_begining(hash_node_t **head, hash_node_t *node)
 {
     if (*head == NULL)
         *head = node;
