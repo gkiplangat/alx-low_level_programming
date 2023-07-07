@@ -11,7 +11,7 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
 	unsigned long int hsh, index;
 
-	hash = hash_djb2(key);
+	hsh = hash_djb2(key);
 	index = hsh % size;
 
 	return (index);
