@@ -2,16 +2,17 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
-
+RM = rm -f
 all: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 	@echo "Creating an Executable file School"
+clean:
+	$(RM) *~ $(NAME)
+	@echo "Removing temporary and Executable files..";
 oclean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 	@echo "Removing Object files...";
 fclean:
-	rm -f $(OBJ) $(NAME)
-	@echo "Removing Object files and Executable files ...";
-clean:
-	rm -f $(OBJ) $(NAME)
-	@echo "Removing Object and Executable files..";
+	$(RM) *~ $(NAME) $(OBJ)
+	@echo "Removing Temporary files, Object files and Executable files ...";
+re: oclean all
