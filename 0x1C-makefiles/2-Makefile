@@ -1,15 +1,9 @@
 .PHONY: all
 
 CC = gcc
-SRC = school.c main.c
-OBJ = $(SRC:%.c=%.o) 
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 
-all: $(SRC)
-	$(CC) -c $(SRC)
-	@echo "Creating Object files..";
-	$(CC) -o $(NAME) $(OBJ)
-	@echo "Creating Executable file..";
-clean:
-	rm -f $(OBJ) $(NAME)
-	echo "Removing Object and Executable files ..";
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
