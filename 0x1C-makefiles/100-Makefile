@@ -5,8 +5,8 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all: m.h ${SRC}
-	$(CC) $(CLFAGS) $(SRC) -o $(NAME)
+all: m.h ${OBJ}
+	$(CC) $(SRC) -o $(NAME)
 	@echo "Creating an Executable file School"
 clean:
 	$(RM) *~ $(NAME)
