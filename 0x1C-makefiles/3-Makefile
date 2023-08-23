@@ -1,0 +1,17 @@
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+	@echo "Creating an Executable file School"
+oclean:
+	rm -f $(OBJ)
+	@echo "Removing Object files...";
+fclean:
+	rm -f $(OBJ) $(NAME)
+	@echo "Removing Object files and Executable files ...";
+clean:
+	rm -f $(OBJ) $(NAME)
+	@echo "Removing Object and Executable files..";
