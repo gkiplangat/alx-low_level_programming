@@ -1,4 +1,4 @@
-.PHONY: all clean oclean fclean re
+
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
@@ -17,4 +17,4 @@ oclean:
 fclean:
 	$(RM) *~ $(NAME) $(OBJ)
 	@echo "Removing Temporary files, Object files and Executable files ...";
-re: fclean all
+re: oclean all
