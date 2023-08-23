@@ -5,7 +5,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all: ${SRC}
+all: ${OBJ}
 	$(CC) $(CLFAGS) $(OBJ) -o $(NAME)
 	@echo "Creating an Executable file School"
 clean:
@@ -17,4 +17,4 @@ oclean:
 fclean:
 	$(RM) *~ $(NAME) $(OBJ)
 	@echo "Removing Temporary files, Object files and Executable files ...";
-re: oclean all
+re: fclean all
