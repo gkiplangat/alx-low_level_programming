@@ -6,7 +6,7 @@ NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 all: ${SRC}
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CLFAGS) $(OBJ) -o $(NAME)
 	@echo "Creating an Executable file School"
 clean:
 	$(RM) *~ $(NAME)
