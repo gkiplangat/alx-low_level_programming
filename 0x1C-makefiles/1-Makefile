@@ -4,4 +4,4 @@ SRC = school.c main.c
 all: $(SRC)
 	$(CC) -o school $(SRC)
 clean:
-	rm -f $(OBJ) $(NAME)
+	rm -f school

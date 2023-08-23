@@ -1,5 +1,3 @@
-.PHONY: all
-
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
@@ -7,3 +5,7 @@ NAME = school
 
 all: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
+	@echo "Creating an Executable file School"
+clean:
+	rm -f $(OBJ) $(NAME)
+	@echo "Removing Object and Executable files..";
