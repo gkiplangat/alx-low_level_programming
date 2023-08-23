@@ -1,12 +1,13 @@
+.PHONY : all clean oclean fclean re
 
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
-
 CFLAGS = -Wall -Werror -Wextra -pedantic
+
 all: m.h ${OBJ}
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
 	@echo "Creating an Executable file School"
 clean:
 	$(RM) *~ $(NAME)
