@@ -1,0 +1,19 @@
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+
+CFLAGS = -Wall -Werror -Wextra -pedantic
+all: m.h ${OBJ}
+	$(CC) $(CLFAGS) $(OBJ) -o $(NAME)
+	@echo "Creating an Executable file School"
+clean:
+	$(RM) *~ $(NAME)
+	@echo "Removing temporary and Executable files..";
+oclean:
+	$(RM) $(OBJ)
+	@echo "Removing Object files...";
+fclean:clean oclean
+	@echo "Removing Temporary files, Object files and Executable files ...";
+re: oclean all
