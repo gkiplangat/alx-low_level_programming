@@ -6,7 +6,7 @@ NAME = school
 all: $(SRC)
 	$(CC) -c $(SRC)
 	@echo "Creating Object files..";
-	$(CC) -o school $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
 	@echo "Creating Executable file..";
 clean:
 	rm -f $(OBJ) $(NAME)
